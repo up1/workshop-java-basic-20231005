@@ -1,5 +1,7 @@
 package oop;
 
+import lombok.Data;
+
 import java.util.Objects;
 
 import static oop.EmployeeType.Fulltime;
@@ -19,50 +21,20 @@ class Demo2 {
         }
         System.out.println(e1);
         System.out.println(e2);
+
+        EmployeeV2 e3 = new EmployeeV2(null, Fulltime);
     }
 }
+
+record EmployeeV2 (Integer id, EmployeeType type){}
+
+@Data
 public class Employee {
     // Properties
     private Integer id;
     private EmployeeType type; // 1. Full time, 2. Contract
-
-    public Employee() {
-        this(null);
-    }
-
-    public Employee(Integer id) {
-        this(id, Fulltime);
-    }
-
-    public Employee(Integer id, EmployeeType type) {
-        this.id = id;
-        this.type = type;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Employee employee = (Employee) o;
-        return Objects.equals(id, employee.id) && type == employee.type;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, type);
-    }
-
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "id=" + id +
-                ", type=" + type +
-                '}';
-    }
-
     // Behaviors or methods
     void doSth() {
-
     }
 }
 
