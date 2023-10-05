@@ -18,10 +18,13 @@ public class DemoLoop {
             System.out.println(datas.get(i));
         }
         for (Integer data : datas) {
-            System.out.println(data);
+            if(data % 2 != 0) {
+                System.out.println(data);
+            }
         }
         datas.forEach(System.out::println);
-        datas.stream().forEach(System.out::println);
+        datas.stream().filter(e -> e%2 != 0)
+                .forEach(System.out::println);
         datas.parallelStream().forEach(System.out::println);
 
 
