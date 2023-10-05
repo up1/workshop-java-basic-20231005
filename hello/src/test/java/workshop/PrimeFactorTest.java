@@ -42,4 +42,17 @@ class PrimeFactorTest {
         List<Integer> actualResult = p.process(8);
         assertEquals(expected, actualResult);
     }
+
+    @Test
+    @DisplayName("Input 16 => 2,2,2,2")
+    void case04() {
+        List<Integer> expected = new ArrayList<>();
+        expected.add(2);
+        expected.add(2);
+        expected.add(2);
+        expected.add(2);
+        PrimeFactor p = new PrimeFactor();
+        List<Integer> actualResult = p.process(16);
+        assertEquals(expected, actualResult);
+    }
 }
