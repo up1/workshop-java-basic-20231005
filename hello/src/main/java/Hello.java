@@ -6,16 +6,17 @@ public class Hello {
     }
 
     String sayHi(String name) {
-        if("x".endsWith(name)) {
+        if ("x".equals(name)) {
             return "New req";
         }
+        Demo demo = new Demo();
+        demo.doSth();
         return "Hello, " + name;
     }
 }
 
 class Demo {
     void doSth() {
-        Hello hello = new Hello();
-        hello.sayHi("somkiat 2");
+        // TODO :: next
     }
 }
