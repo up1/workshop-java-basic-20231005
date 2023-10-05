@@ -1,5 +1,7 @@
 package oop;
 
+import java.util.Objects;
+
 import static oop.EmployeeType.Fulltime;
 
 enum EmployeeType {
@@ -35,6 +37,19 @@ public class Employee {
     public Employee(Integer id, EmployeeType type) {
         this.id = id;
         this.type = type;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return Objects.equals(id, employee.id) && type == employee.type;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, type);
     }
 
     @Override
