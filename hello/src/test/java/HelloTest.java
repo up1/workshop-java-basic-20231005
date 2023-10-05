@@ -20,4 +20,12 @@ class HelloTest {
         String result = hello.sayHi("somkiat2");
         assertEquals("Hello, somkiat2", result);
     }
+
+    @Test
+    @DisplayName("เพิ่ม req ใหม่เข้ามา ต้องได้ค่า New req")
+    void case03() {
+        Hello hello = new Hello();
+        String result = hello.sayHi("x");
+        assertEquals("New req", result);
+    }
 }

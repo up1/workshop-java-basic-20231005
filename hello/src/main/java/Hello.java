@@ -6,6 +6,9 @@ public class Hello {
     }
 
     String sayHi(String name) {
+        if("x".endsWith(name)) {
+            return "New req";
+        }
         return "Hello, " + name;
     }
 }
