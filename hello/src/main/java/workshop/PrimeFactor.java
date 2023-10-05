@@ -7,7 +7,7 @@ public class PrimeFactor {
 
     List<Integer> process(int input) {
         List<Integer> output = new ArrayList<>();
-        // TODO : next
+        output.add(input);
         return output;
     }
 
