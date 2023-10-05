@@ -4,7 +4,9 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -55,4 +57,17 @@ class PrimeFactorTest {
         List<Integer> actualResult = p.process(16);
         assertEquals(expected, actualResult);
     }
+
+//    @Test
+//    @DisplayName("Input 16 => 2,2,2,2")
+//    void case04() {
+//        List<Integer> expected = generateData(2, 2, 2, 2);
+//        PrimeFactor p = new PrimeFactor();
+//        List<Integer> actualResult = p.process(16);
+//        assertEquals(expected, actualResult);
+//    }
+//
+//    private List<Integer> generateData(int ... datas) {
+//        return Arrays.stream(datas).boxed().collect(Collectors.toList());
+//    }
 }
