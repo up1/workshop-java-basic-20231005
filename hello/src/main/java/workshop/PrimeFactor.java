@@ -9,8 +9,9 @@ public class PrimeFactor {
         List<Integer> output = new ArrayList<>();
         output.add(2);
         int remain = input/2;
-        if(remain != 1) {
+        while(remain > 1) {
             output.add(2);
+            remain = remain/2;
         }
         return output;
     }
