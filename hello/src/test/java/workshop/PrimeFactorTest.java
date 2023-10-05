@@ -60,8 +60,7 @@ class PrimeFactorTest {
     private List<Integer> generateData(int ... datas) {
         List<Integer> list = new ArrayList<>();
         for (int data : datas) {
-            Integer i = data;
-            list.add(i);
+            list.add(data);
         }
         return list;
     }
