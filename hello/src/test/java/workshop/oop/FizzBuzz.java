@@ -11,14 +11,14 @@ public class FizzBuzz {
         rules.add(new FizzRule());
         rules.add(new BuzzRule());
         rules.add(new SCBRule());
-
+        String result = "" + input;
         for (MyRule rule : rules) {
             if(rule.check(input)) {
-                return rule.say();
+                result = rule.say();
+                break;
             }
         }
-
-        return "" + input;
+        return result;
     }
 
 }
@@ -26,6 +26,20 @@ public class FizzBuzz {
 interface MyRule {
     boolean check(int input);
     String say();
+}
+
+class DefaultRule implements MyRule{
+    int input;
+    @Override
+    public boolean check(int input) {
+        this.input = input;
+        return true;
+    }
+
+    @Override
+    public String say() {
+        return "" + input;
+    }
 }
 
 class FizzBuzzRule implements MyRule{
