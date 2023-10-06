@@ -72,6 +72,7 @@ class ServiceA implements TaskResult {
         this.b = b;
     }
     void callB() {
+//        ServiceB b = new ServiceB();
         String result = b.doSth(this);
         if(result != null) {
             // TODO
