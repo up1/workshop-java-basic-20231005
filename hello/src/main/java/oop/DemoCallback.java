@@ -42,20 +42,28 @@ class Impl1 implements  X{
     }
 }
 
-public class DemoCallback {
-    public static void main(String[] args) {
-
-    }
-}
-
 interface TaskResult {
     void success(String result);
     void failure(String error);
 }
 
-class ServiceA implements TaskResult {
-    void callB() {
+public class DemoCallback {
+    public static void main(String[] args) {
+        // Dependency
         ServiceB b = new ServiceB();
+        // Dependency Injection (DI)
+        ServiceA a = new ServiceA(); // Constructor injection
+        a.setB(b);  // Setter injection
+        a.callB(); // Method injection
+    }
+}
+
+class ServiceA implements TaskResult {
+    private ServiceB b;
+    public void setB(ServiceB b) {
+        this.b = b;
+    }
+    void callB() {
         String result = b.doSth(this);
         if(result != null) {
             // TODO
@@ -69,12 +77,15 @@ class ServiceA implements TaskResult {
     @Override
     public void failure(String error) {
     }
+
+
 }
 
 class ServiceB {
     String doSth(TaskResult a) {
-        a.success("200");
-        a.failure("500");
-        return "";
+//        a.success("200");
+//        a.failure("500");
+//        return "";
+        throw new RuntimeException("XXX");
     }
 }
