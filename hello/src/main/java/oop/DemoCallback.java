@@ -47,10 +47,18 @@ interface TaskResult {
     void failure(String error);
 }
 
+class MockServiceB extends ServiceB {
+    @Override
+    String doSth(TaskResult a) {
+        System.out.println("MockServiceB ..");
+        return "";
+    }
+}
+
 public class DemoCallback {
     public static void main(String[] args) {
         // Dependency
-        ServiceB b = new ServiceB();
+        ServiceB b = new MockServiceB();
         // Dependency Injection (DI)
         ServiceA a = new ServiceA(); // Constructor injection
         a.setB(b);  // Setter injection
