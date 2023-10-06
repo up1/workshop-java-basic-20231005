@@ -7,6 +7,12 @@ import static org.junit.jupiter.api.Assertions.*;
 class FizzBuzzTest {
 
     @Test
+    public void newCase() {
+        FizzBuzz fizzBuzz = new FizzBuzz();
+        assertEquals("SCB", fizzBuzz.say(7));
+    }
+
+    @Test
     public void case01() {
         FizzBuzz fizzBuzz = new FizzBuzz();
         assertEquals("1", fizzBuzz.say(1));
