@@ -16,4 +16,8 @@ public class IdGeneratorService {
         return result + random.nextInt(10);
     }
 
+    private int doSth() {
+        return 1;
+    }
+
 }
