@@ -6,20 +6,29 @@ public class DemoCallback {
     }
 }
 
-class ServiceA {
+interface TaskResult {
+    void success(String result);
+    void failure(String error);
+}
+
+class ServiceA implements TaskResult {
     void callB() {
         ServiceB b = new ServiceB();
-        b.doSth();
+        b.doSth(this);
     }
 
-    void success(String result) {
+    @Override
+    public void success(String result) {
     }
-    void failure(String error) {
+
+    @Override
+    public void failure(String error) {
     }
 }
 
 class ServiceB {
-    void doSth() {
-
+    void doSth(TaskResult a) {
+        a.success("200");
+        a.failure("500");
     }
 }
